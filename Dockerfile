@@ -20,4 +20,4 @@ COPY . .
 
 # command to run on container start
 EXPOSE 9000
-CMD [ "/usr/local/bin/uwsgi",  "--ini", "/export/python_utils/current/py-utils.ini"]
+CMD [ "python3", "/export/python_utils/current/py-util.py"]
