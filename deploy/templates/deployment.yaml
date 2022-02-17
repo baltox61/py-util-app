@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pyapp
+  namespace: pyapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pyapp 
+  template:
+    metadata:
+      labels:
+        app: pyapp 
+    spec:
+      containers:
+      - name: pyapp
+        image: baltox61/python-utils:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
